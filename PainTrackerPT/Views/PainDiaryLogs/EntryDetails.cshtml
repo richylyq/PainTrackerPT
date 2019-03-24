@@ -1,0 +1,60 @@
+﻿@model PainTrackerPT.Models.PainDiary.Entry
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Entry</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.entryTitle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.entryTitle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.entryDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.entryDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.entryTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.entryTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.painArea)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.painArea)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.painIntensity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.painIntensity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.painTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.painTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.diaryId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.diaryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.entryID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

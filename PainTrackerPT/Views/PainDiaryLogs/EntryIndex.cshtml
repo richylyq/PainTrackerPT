@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PainTrackerPT.Models.PainDiary.Entry>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My Pain Diary <button style="margin-left:70%" class="btn" onclick='window.location.href = "@Url.Action("EntryCreate","PainDiaryLogs")";'><i class="fas fa-edit fa-2x"></i><br /></button></h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.entryTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.entryDescription)
+            </th>
+            <th>
+                Entry Date
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.entryTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.entryDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.entryTime)
+            </td>
+    
+
+            <td>
+                <a asp-action="EntryView" asp-route-id="@item.entryID">View</a> |
+                <a asp-action="EntryDelete" asp-route-id="@item.entryID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
